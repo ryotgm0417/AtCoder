@@ -7,13 +7,13 @@ typedef vector<int> VI;
 typedef vector<vector<int>> VVI;
 
 int main(){
-  int n;
-  cin >> n;
+  int a,b,c,d;
+  cin >> a >> b >> c >> d;
 
-  int i=0;
-  while(i*i <= n) i++;
-  i--;
-  cout << (i*i) << endl;
+  int start = max(a,c);
+  int end = min(b,d);
+
+  cout << max(0,end-start) << endl;
 
   return 0;
 }

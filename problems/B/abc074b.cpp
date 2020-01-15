@@ -7,13 +7,17 @@ typedef vector<int> VI;
 typedef vector<vector<int>> VVI;
 
 int main(){
-  int n;
-  cin >> n;
+  int n,k;
+  cin >> n >> k;
+  int x[n];
+  rep(i,n) cin >> x[i];
 
-  int i=0;
-  while(i*i <= n) i++;
-  i--;
-  cout << (i*i) << endl;
+  int dist=0;
+  rep(i,n){
+    dist += 2*min(x[i], k-x[i]);
+  }
+
+  cout << dist << endl;
 
   return 0;
 }

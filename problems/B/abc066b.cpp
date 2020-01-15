@@ -7,13 +7,19 @@ typedef vector<int> VI;
 typedef vector<vector<int>> VVI;
 
 int main(){
-  int n;
-  cin >> n;
+  string s;
+  cin >> s;
 
-  int i=0;
-  while(i*i <= n) i++;
-  i--;
-  cout << (i*i) << endl;
+  int len;
+  rep2(i,1,s.length()){
+    string t = s.substr(0,s.length()-i);
+    len = t.length();
+
+    if(len%2 == 1) continue;
+    if(t.substr(0,len/2) == t.substr(len/2, len/2)) break;
+  }
+
+  cout << len << endl;
 
   return 0;
 }

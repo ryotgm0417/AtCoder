@@ -7,13 +7,14 @@ typedef vector<int> VI;
 typedef vector<vector<int>> VVI;
 
 int main(){
-  int n;
-  cin >> n;
+  string s;
+  cin >> s;
+  int len=s.size();
 
-  int i=0;
-  while(i*i <= n) i++;
-  i--;
-  cout << (i*i) << endl;
+  string out((len+1)/2, '-');
+  rep(i,(len+1)/2) out[i] = s[2*i];
+
+  cout << out << endl;
 
   return 0;
 }
