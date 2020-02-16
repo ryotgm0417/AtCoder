@@ -7,8 +7,6 @@ using VI = vector<int>;
 using VVI = vector<vector<int>>;
 using P = pair<int, int>;
 
-using PS = pair<string,int>;
-
 int main(){
 	string s;
     int k;
