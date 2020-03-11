@@ -3,8 +3,8 @@ using namespace std;
 #define rep(i,n) for (int i=0; i < (int)(n); i++)
 #define rep2(i, s, n) for (int i = (s); i < (int)(n); i++)
 using ll = long long;
-using VL = vector<ll>;
-using VVL = vector<vector<ll>>;
+using VI = vector<ll>;
+using VVI = vector<vector<ll>>;
 using P = pair<ll, ll>;
 
 // chmin, chmax関数
@@ -28,6 +28,18 @@ bool chmin(T& xmin, const U& x, Comp comp={}) {
 //---------------------------
 
 int main(){
+    ll n,t, sum=0;
+    cin >> n >> t;
 
+    ll bef, aft;
+    cin >> aft; // = 0
+    rep(i,n-1){
+        bef = aft;
+        cin >> aft;
+        if(aft-bef < t) sum += aft - bef;
+        else sum += t;
+    }
+    sum += t;
+    cout << sum << endl;
     return 0;
 }
