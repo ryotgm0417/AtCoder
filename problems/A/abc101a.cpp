@@ -34,6 +34,13 @@ void Ans(bool f){
 //---------------------------
 
 int main(){
-
+    string s;
+    cin >> s;
+    int ans = 0;
+    rep(i,4){
+        if(s[i]=='+') ans++;
+        else ans--;
+    } 
+    cout << ans << endl;
     return 0;
 }

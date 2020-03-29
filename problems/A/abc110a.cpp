@@ -25,15 +25,12 @@ bool chmin(T& xmin, const U& x, Comp comp={}) {
     return false;
 }
 
-// Yes-Noを出力する問題で楽をする
-void Ans(bool f){
-    if(f) cout << "Yes" << endl;
-    else cout << "No" << endl;
-}
-
 //---------------------------
 
 int main(){
-
+    VL a(3);
+    rep(i,3) cin >> a[i];
+    sort(a.begin(), a.end());
+    cout << a[2]*10 + a[1] + a[0] << endl;
     return 0;
 }

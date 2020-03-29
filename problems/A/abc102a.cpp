@@ -34,6 +34,9 @@ void Ans(bool f){
 //---------------------------
 
 int main(){
-
+    ll n;
+    cin >> n;
+    if(n%2) cout << 2*n << endl;
+    else cout << n << endl;
     return 0;
 }

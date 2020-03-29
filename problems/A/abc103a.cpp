@@ -34,6 +34,9 @@ void Ans(bool f){
 //---------------------------
 
 int main(){
-
+    int a,b,c;
+    cin >> a >> b >> c;
+    int d = abs(a-b), e = abs(b-c), f = abs(c-a);
+    cout << d+e+f-max(max(d,e),f) << endl;
     return 0;
 }

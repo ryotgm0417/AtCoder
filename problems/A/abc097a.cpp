@@ -34,6 +34,8 @@ void Ans(bool f){
 //---------------------------
 
 int main(){
-
+    int a,b,c,d;
+    cin >> a >> b >> c >> d;
+    Ans(!(abs(a-c)>d && (abs(a-b)>d || abs(b-c)>d)));
     return 0;
 }
