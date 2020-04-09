@@ -1,3 +1,36 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define rep(i,n) for (int i=0; i < (int)(n); i++)
+#define rep2(i, s, n) for (int i = (s); i < (int)(n); i++)
+using ll = long long;
+using VL = vector<ll>;
+using VVL = vector<vector<ll>>;
+using P = pair<ll, ll>;
+
+// chmin, chmax関数
+template<typename T, typename U, typename Comp=less<>>
+bool chmax(T& xmax, const U& x, Comp comp={}) {
+    if(comp(xmax, x)) {
+        xmax = x;
+        return true;
+    }
+    return false;
+}
+template<typename T, typename U, typename Comp=less<>>
+bool chmin(T& xmin, const U& x, Comp comp={}) {
+    if(comp(x, xmin)) {
+        xmin = x;
+        return true;
+    }
+    return false;
+}
+
+// Yes-Noを出力する問題で楽をする
+void Ans(bool f){
+    if(f) cout << "Yes" << endl;
+    else cout << "No" << endl;
+}
+
 // https://qiita.com/drken/items/3b4fdf0a78e7a138cd9a より拝借
 // modint: mod 計算を int を扱うように扱える構造体
 template<int MOD> struct Fp {
@@ -59,3 +92,30 @@ template<int MOD> struct Fp {
 
 const int MOD = 1000000007;
 using mint = Fp<MOD>;
+
+//---------------------------
+
+int main(){
+    ll n; cin >> n;
+    VL ones(64,0);
+    rep(i,n){
+        ll a; cin >> a;
+        rep(i,64){
+            if(a%2) ones[i]++;
+            a /= 2;
+        }
+    }
+
+    rep(i,64){
+        ones[i] = (n - ones[i]) * ones[i];
+    }
+    mint ans = 0;
+    rep(i,64){
+        mint oi = ones[i];
+        ans += oi * modpow((mint)2,i);
+    }
+
+    cout << ans << endl;
+
+    return 0;
+}
